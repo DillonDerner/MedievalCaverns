@@ -22,9 +22,9 @@ def getPlayerName():
 
 def runTutorial():
 
-    showTutorial = str(input("Would you like to view the tutorial(Y/N)?: "))
+    showTutorial = str(input("Would you like to view the tutorial(Y/N)?: ")).lower()
 
-    if showTutorial == "y":
+    if showTutorial in ["y", "yes"]:
         print("\n-Tutorial-\n")
 
         print("To control your character in Medieval Caverns, you will need to ")

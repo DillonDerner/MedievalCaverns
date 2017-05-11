@@ -2,24 +2,39 @@
 
 
 class Monster(object):
+    def __init__(self):
+        self.name = None
+        self.text = None
+        self.totalHealth = None
+        self.currentHealth = self.totalHealth
+        self.attack = None
+        self.defence = None
+        self.alive = True
 
     # The name of our Enemy
     def getName(self):
-        raise NotImplementedError  # you want to override this on the child classes
+        return self.name
 
     # The Enemy Dialogue
     def getText(self):
-        raise NotImplementedError  # you want to override this on the child classes
+        return self.text
 
     # The Enemy's HP
     def getHealth(self):
-        raise NotImplementedError  # you want to override this on the child classes
+        return self.currentHealth
+
+    # How the Enemy takes damage
+    def takeDamage(self, damage):
+        if self.currentHealth > damage:
+            self.currentHealth = self.currentHealth - damage
+        else:
+            self.alive = False
+        return self.alive
 
     # The Enemy's Attack
     def getAttack(self):
-        raise NotImplementedError  # you want to override this on the child classes
+        return self.attack
 
     # The Enemy's Defence
     def getDefense(self):
-        raise NotImplementedError  # you want to override this on the child classes
-
+        return self.defence

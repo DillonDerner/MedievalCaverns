@@ -3,11 +3,11 @@
 from Npc.Bad.Monster import *
 
 
-class Goblin(Monster):
+class Rat(Monster):
     def __init__(self):
-        self.name = "Goblin"
-        self.text = "oOoo Shiny!"
-        self.totalHealth = 10
+        self.name = "Rat"
+        self.text = "Squeak! Squeak!"
+        self.totalHealth = 3
         self.currentHealth = self.totalHealth
         self.attack = 1
         self.defence = 1

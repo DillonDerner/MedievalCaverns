@@ -1,14 +1,9 @@
 # Medieval Caverns
 # Dillon Derner
 
-from Npc.Bad.Goblin import *
-from Greeting import *
 from Player import *
 from Turn import *
-
-# Set this to True to play the full game / False to debug
-fullMode = False
-tutorial = False
+from Map import *
 
 
 def Main():
@@ -17,13 +12,19 @@ def Main():
     # Create the new player
     player = Player()
 
-    if fullMode:
-        namePlayer(player)
+    # Create the new map
+    theMap = createMap()
+
+    if showExtras:
+        print(theMap)
+
     if tutorial:
+        namePlayer(player)
         runTutorial()
 
     print()
-    Turn(player)
+    while player.alive:
+        Turn(player, theMap)
 
 
 Main()
