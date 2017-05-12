@@ -11,6 +11,14 @@ class Monster(object):
         self.defence = None
         self.alive = True
 
+    # Return a string of the monsters Stats
+    def getStats(self):
+        print("{} | HP:{}/{}| ATK:{} | DEF:{} ".format(self.name,
+                                                       self.currentHealth,
+                                                       self.totalHealth,
+                                                       self.attack,
+                                                       self.defence))
+
     # The name of our Enemy
     def getName(self):
         return self.name

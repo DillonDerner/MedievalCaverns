@@ -6,3 +6,8 @@ tutorial = False
 
 
 mapSize = 50
+monsterDensity = 50  # 50% of the tiles should be Monster Encounters
+
+yes = ["y", "yes"]
+
+#TODO add a mapkit to allow the player to record the map!

@@ -14,6 +14,7 @@ class Player(object):
         self.defence = 1
         self.money = 0
         self.deaths = 0
+        self.bank = 100
 
     # The name of our Hero
     def getName(self):
@@ -89,3 +90,35 @@ class Player(object):
         self.currentHealth = self.totalHealth
         self.alive = True
         # reset location?
+
+    # Add cash to the players on-hand money
+    def addMoney(self, money):
+        self.money += money
+
+    # Returns the amount of money the player has in their bank
+    def getBankValue(self):
+        return self.bank
+
+    # Adds players cash to their bank
+    def addToBank(self, deposit):
+
+        if deposit <= self.money:
+            self.money -= deposit
+            self.bank += deposit
+            print("Successfully deposited ${}".format(deposit))
+            print("You are now carrying ${}".format(self.money))
+
+        else:
+            print("You do not have that much money...")
+
+    # Removes cash from the players bank, to the player
+    def withdrawFromBank(self, amount):
+
+        if amount <= self.bank:
+            self.bank -= amount
+            self.money += amount
+            print("Successfully withdrew ${}".format(amount))
+            print("You are now carrying ${}".format(self.money))
+
+        else:
+            print("You do not have that much money in your bank...")

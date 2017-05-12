@@ -56,12 +56,6 @@ def MoveAhead(player, theMap):
     # Figure out where the player landed
     encounter(player, theMap)
 
-    #TODO Add a random encounter system
-
-    #TODO Add a reward system
-
-
-
 
 def MoveBackwards(player, theMap):
     print("{} moved backward...\n".format(player.getName()))
